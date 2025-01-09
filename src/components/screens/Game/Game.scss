@@ -1,0 +1,101 @@
+.pokemons-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.game {
+  display: flex;
+  width: 100%;
+  padding: 30px;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
+
+  .attack-button {
+    height: 60px;
+    width: 150px;
+  }
+}
+
+.game-logs {
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  width: 200px;
+  background-color: #f3f5f7;
+  overflow: scroll;
+  border-radius: 10px;
+  padding: 10px;
+  gap: 10px;
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #c0c0c0;
+    border-radius: 5px;
+    padding: 5px;
+
+    span {
+      width: 100%;
+      text-align: right;
+      margin-bottom: 5px;
+      font-size: 0.75rem;
+    }
+  }
+}
+
+@keyframes attackMoveDown {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: translateY(calc(200px));
+  }
+}
+
+@keyframes attackMoveUp {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: translateY(calc(-200px));
+  }
+}
+
+@keyframes hitReaction {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.attackingDown {
+  animation: attackMoveDown 1s ease forwards;
+}
+
+.attackingUp {
+  animation: attackMoveUp 1s ease forwards;
+}
+
+.hit {
+  animation: hitReaction 500ms ease;
+}

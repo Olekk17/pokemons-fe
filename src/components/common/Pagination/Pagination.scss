@@ -1,0 +1,17 @@
+.pagination {
+  display: flex;
+  gap: 10px;
+
+  &__page {
+    padding: 0px 10px;
+    border-radius: 5px;
+    background-color: #1569ad;
+    color: #fff;
+    line-height: 35px;
+  }
+
+  &__page,
+  button {
+    height: 35px;
+  }
+}

@@ -1,0 +1,23 @@
+.pokemon-details-modal .ant-modal-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    max-width: 400px;
+    width: 75vw;
+  }
+
+  section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .stats {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+}
