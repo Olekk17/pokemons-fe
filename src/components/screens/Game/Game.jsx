@@ -92,6 +92,7 @@ export const Game = () => {
             disabled={!isMyTurn}
             onClick={handleAttack}
             className="attack-button"
+            color="blue"
           />
         </div>
       </div>
