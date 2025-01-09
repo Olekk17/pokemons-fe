@@ -4,9 +4,9 @@ import { LoadingOutlined } from "@ant-design/icons";
 
 export const Button = (props = {}) => (
   <button
-    className={`button ${props.color || ""}`}
     {...props}
     disabled={props.loading || props.disabled}
+    className={`button ${props.color || ""}${props.className ? ` ${props.className}` : ""}`}
   >
     {props.loading ? <LoadingOutlined /> : props.text}
   </button>
@@ -18,4 +18,5 @@ Button.propTypes = {
   text: PropTypes.string,
   loading: PropTypes.bool,
   disabled: PropTypes.bool,
+  className: PropTypes.string,
 };
