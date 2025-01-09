@@ -1,4 +1,5 @@
 import Web3 from "web3";
+import { useState } from "react";
 import { getNonce, signMessage, verifySignature } from "../auth";
 import { setToken } from "../token";
 import { notification } from "antd";
@@ -6,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 
 export const useSignIn = () => {
   const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
 
   async function signIn() {
     const web3 = new Web3(window.ethereum);
@@ -14,6 +16,7 @@ export const useSignIn = () => {
     const walletAddress = accounts[0];
 
     try {
+      setLoading(true);
       const nonce = await getNonce(walletAddress);
       const signature = await signMessage(walletAddress, nonce);
       const verificationResult = await verifySignature(
@@ -40,8 +43,10 @@ export const useSignIn = () => {
         message: "Error",
         description: "An error occurred during sign-in",
       });
+    } finally {
+      setLoading(false);
     }
   }
 
-  return { signIn };
+  return { signIn, loading };
 };

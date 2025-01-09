@@ -3,12 +3,13 @@ import "./Home.scss";
 import { useSignIn } from "../../../helpers/hooks/useSignIn";
 
 export const Home = () => {
-  const { signIn } = useSignIn();
+  const { signIn, loading } = useSignIn();
+  
   return (
     <div className="home">
       <h2>Pokemon game</h2>
 
-      <Button text="LOGIN WITH METAMASK" color="blue" onClick={signIn} />
+      <Button text="LOGIN WITH METAMASK" color="blue" onClick={signIn} loading={loading}/>
     </div>
   );
 };
