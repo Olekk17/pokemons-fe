@@ -59,6 +59,7 @@ export const Game = () => {
         <Link to="/pokemons">
           <Button text={"BACK TO POKEMONS LIST"} color="red" />
         </Link>
+        {!!game.turns.length && <h4>ROUND {Math.floor(game.turns.length / 2)}</h4>}
         <div className="game">
           <div className="game-logs">
             <h6>LOGS:</h6>
