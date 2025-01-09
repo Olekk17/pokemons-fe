@@ -1,7 +1,11 @@
 React (no TS as required, it was hard without it), project created with Vite.
+
 axios for HTTP(s) requests.
+
 antd for notifications and modals.
-scss for styles
+
+scss for styles.
+
 socket.io for WS connection with BE.
 
 
